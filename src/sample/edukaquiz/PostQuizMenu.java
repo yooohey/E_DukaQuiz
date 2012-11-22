@@ -29,6 +29,7 @@ public class PostQuizMenu extends Activity {
 		
 		this.setup();
 		Toast.makeText(this, uuid.toString(), Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, this.userName, Toast.LENGTH_SHORT).show();
 	}
 	
 	public void pushBtn(View view){
@@ -67,6 +68,8 @@ public class PostQuizMenu extends Activity {
 	private void setUserNameDialog(){
 		
 		final EditText edit = new EditText(this);
+		//改行不可
+		edit.setInputType(InputType.TYPE_CLASS_TEXT);
 		InputFilter[] _inputFileter = new InputFilter[1];
 		_inputFileter[0] = new InputFilter.LengthFilter(6);
 		edit.setFilters(_inputFileter);

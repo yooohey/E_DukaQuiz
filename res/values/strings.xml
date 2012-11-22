@@ -23,4 +23,11 @@
     <string name="label_postDialogTitle">投稿する際の名前を入力してください</string>
     <string name="label_postDialogMessage">6文字まで入力できます</string>
     
+    <string name="label_postingReturn">戻る</string>
+    <string name="label_postingPost">投稿！</string>
+    
+    <string name="label_postingQ">問題文を入れてください</string>
+    <string name="label_postingAnswer">解答を入れてください</string>
+    <string name="label_postingDammy">誤答を入れてください</string>
+    
     </resources>

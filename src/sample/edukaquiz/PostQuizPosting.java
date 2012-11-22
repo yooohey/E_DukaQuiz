@@ -13,6 +13,7 @@ public class PostQuizPosting extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO 自動生成されたメソッド・スタブ
 		super.onCreate(savedInstanceState);
+		this.setContentView(R.layout.posting);
 	}
 
 	@Override

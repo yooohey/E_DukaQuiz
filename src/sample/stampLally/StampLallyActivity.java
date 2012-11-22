@@ -88,7 +88,7 @@ private static final float RADISU = 50;
         
         testGP = new GeoPoint((int)(33.643536*1e6),(int)(130.691459*1e6));
         ctrl.setCenter(this.destinationGP.get(0));
-        ctrl.setZoom(18);
+        ctrl.setZoom(19);
         /*
         this.iconDraws.put(true, new Icon(this,this.map));
 		this.iconDraws.put(false, new BallonIcon(this, this.map));
