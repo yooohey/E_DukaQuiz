@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+   
+   <PreferenceCategory android:title="@string/category_quiz">
+       <PreferenceScreen android:key="twitter" android:title="@string/label_twitter"></PreferenceScreen>
+     
+       
+   </PreferenceCategory>
+   
+   <PreferenceCategory android:title="@string/category_stamp">
+       <CheckBoxPreference android:title="@string/label_vibrator" android:key="@string/key_vibrator" android:defaultValue="true" />
+       <PreferenceScreen android:key="stampClear" android:title="@string/label_stampClear"></PreferenceScreen>
+   </PreferenceCategory>
+    
+    
+
+</PreferenceScreen>
