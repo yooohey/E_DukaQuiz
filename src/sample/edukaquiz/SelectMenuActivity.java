@@ -46,6 +46,11 @@ public class SelectMenuActivity extends Activity{
 		if(view.getId() == R.id.menuQuiz){
 			Intent i = new Intent(this,OfflineQuizActivity.class);
 			this.startActivityForResult(i,0);
+		}else if(view.getId() == R.id.menuThoko){
+			
+			Intent i = new Intent(this,PostQuizMenu.class);
+			this.startActivityForResult(i,0);
+			
 		}else{
 			Intent i = new Intent(this,StampLallyActivity.class);
 			this.startActivity(i);

@@ -27,8 +27,14 @@
         <activity android:name=".OAuthActivity"></activity>
         <activity android:name=".PreferencesActivity"></activity>
         
+        
         <!-- MAPを使用するために追記 -->
         <uses-library android:name="com.google.android.maps"/>
+        <activity android:name="PostQuizHistory"></activity>
+        <activity android:name="PostQuizMenu"></activity>
+        <activity android:name="PostQuizPlay"></activity>
+        <activity android:name="PostQuizPosting"></activity>
+        
     </application>
     
 <uses-permission android:name="android.permission.INTERNET"/>

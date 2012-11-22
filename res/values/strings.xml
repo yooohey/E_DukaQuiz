@@ -20,4 +20,7 @@
     <string name="label_twitter">Twitterの登録解除</string>
     <string name="label_stampClear">スタンプのクリア</string>
     
+    <string name="label_postDialogTitle">投稿する際の名前を入力してください</string>
+    <string name="label_postDialogMessage">6文字まで入力できます</string>
+    
     </resources>
