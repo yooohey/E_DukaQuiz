@@ -84,8 +84,7 @@ public class OfflineQuizActivity extends Activity{
 		//配列をシャッフルする
 		BoxShuffle.shuffle(this.order);		        
         
-        //モザイク問題を先頭へ
-        this.order[0] = 6;this.order[1] = 16;
+        //モザイク問題を先頭へthis.order[0] = 6;this.order[1] = 16;
     
 
         //経過時間の設定　現在MAX10秒
