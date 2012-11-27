@@ -32,18 +32,25 @@ public abstract class Quiz {
 	static Cursor c;
 	//同一パケからも可視出来るのであまり意味ナシ
 	protected static long startTime;
-	protected static Integer point=0; 
+	
 	protected static String answer;
 	protected static int answerCount = 0;
 	private String mondai;
 	private Boolean state;//trueが出題画面　falseが判定画面
 	private static String[] answerColumn = new String[4];
 	
+	protected static Integer point=0; 
+	private static Integer totalTime = 0;
+	
 	abstract void start();
 	abstract void close();
 	abstract void stop();
 	abstract void individualSetup();
 		
+	public static Integer getTotalTime(){
+		return totalTime;
+	}
+	
 	public long getStartTime(){
 		return startTime;
 	}
@@ -59,6 +66,7 @@ public abstract class Quiz {
 	public static void resetResult(){
 		answerCount =0;
 		point = 0;
+		totalTime = 0;
 	}
 	
 	public void setMainActiviti(Activity activity){
@@ -117,6 +125,10 @@ public abstract class Quiz {
 				
 		//startに現在時刻をセット
 		startTime = System.currentTimeMillis();
+		
+		TextView tv = (TextView)activity.findViewById(R.id.quetion);
+		tv.setGravity(Gravity.LEFT);
+			
 	}
 	
 	
@@ -166,6 +178,7 @@ public abstract class Quiz {
 			//正解時にも100P付与
 			point += getPoint+100;
 			
+			
 			tv.setTextColor(Color.RED);
 			this.setTextType(tv,"正解！");
 			//tv.setText("正解！"+point+"ポイント獲得");
@@ -190,6 +203,8 @@ public abstract class Quiz {
 			tv.setTextColor(Color.BLUE);
 			this.setTextType(tv, "タイムアップ!");
 		}
+		
+		totalTime += (int) (System.currentTimeMillis() - startTime);
 	}
 	
 	private void setTextType(TextView tv,String str){
@@ -226,7 +241,7 @@ public abstract class Quiz {
 	public Bitmap createPointImage(Integer point){
 		
 		View view = activity.findViewById(R.id.frameLayout);
-		view = activity.findViewById(R.id.mosaic);
+		view = activity.findViewById(R.id.image_point);
 		
 		int width = view.getWidth();
 		int height = view.getHeight();

@@ -1,0 +1,100 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (classFileParser.cpp:3494), pid=3028, tid=3484
+#  Error: ShouldNotReachHere()
+#
+# JRE version: 6.0_33-b03
+# Java VM: Java HotSpot(TM) Client VM (20.8-b03 mixed mode windows-x86 )
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00846c00):  JavaThread "Unknown thread" [_thread_in_vm, id=3484, stack(0x008d0000,0x00920000)]
+
+Stack: [0x008d0000,0x00920000],  sp=0x0091f898,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x13377a]
+V  [jvm.dll+0x12e6fb]
+V  [jvm.dll+0x164de]
+V  [jvm.dll+0x17d0f]
+V  [jvm.dll+0x26df5]
+V  [jvm.dll+0x27636]
+V  [jvm.dll+0x279e5]
+V  [jvm.dll+0x27a79]
+V  [jvm.dll+0x27b3c]
+V  [jvm.dll+0x27bba]
+V  [jvm.dll+0x27c9d]
+V  [jvm.dll+0x27f69]
+V  [jvm.dll+0x6c4c3]
+V  [jvm.dll+0x6c89c]
+V  [jvm.dll+0xf9cdc]
+V  [jvm.dll+0x11861b]
+V  [jvm.dll+0x9ebc0]
+C  [javaw.exe+0x1657]
+C  [javaw.exe+0x1e2c]
+C  [javaw.exe+0x8614]
+C  [kernel32.dll+0xb729]  GetModuleFileNameA+0x1ba
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00846c00 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=3484, stack(0x008d0000,0x00920000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Dynamic libraries:
+0x00400000 - 0x00425000 	C:\Program Files\Java\jre6\bin\javaw.exe
+0x7c940000 - 0x7c9df000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c933000 	C:\WINDOWS\system32\kernel32.dll
+0x77d80000 - 0x77e29000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e30000 - 0x77ec3000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77fa0000 - 0x77fb1000 	C:\WINDOWS\system32\Secur32.dll
+0x77cf0000 - 0x77d80000 	C:\WINDOWS\system32\USER32.dll
+0x77ed0000 - 0x77f19000 	C:\WINDOWS\system32\GDI32.dll
+0x762e0000 - 0x762fd000 	C:\WINDOWS\system32\IMM32.DLL
+0x60740000 - 0x60749000 	C:\WINDOWS\system32\LPK.DLL
+0x73f80000 - 0x73feb000 	C:\WINDOWS\system32\USP10.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jre6\bin\msvcr71.dll
+0x6d7f0000 - 0x6da9f000 	C:\Program Files\Java\jre6\bin\client\jvm.dll
+0x76af0000 - 0x76b1b000 	C:\WINDOWS\system32\WINMM.dll
+0x6d7a0000 - 0x6d7ac000 	C:\Program Files\Java\jre6\bin\verify.dll
+0x6d320000 - 0x6d33f000 	C:\Program Files\Java\jre6\bin\java.dll
+0x6d7e0000 - 0x6d7ef000 	C:\Program Files\Java\jre6\bin\zip.dll
+0x76ba0000 - 0x76bab000 	C:\WINDOWS\system32\PSAPI.DLL
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Xbootclasspath:D:\Program Files\Android\android-sdk\platforms\android-8\android.jar;D:\Program Files\Android\android-sdk\add-ons\addon-google_apis-google-8\libs\maps.jar 
+java_command: twitter4j.Version
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=;D:\java
+PATH=C:/Program Files/Java/jre7/bin/client;C:/Program Files/Java/jre7/bin;C:/Program Files/Java/jre7/lib/i386;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Common Files\Roxio Shared\DLLShared\;C:\Program Files\Common Files\Roxio Shared\DLLShared\;C:\Program Files\Common Files\Roxio Shared\9.0\DLLShared\;d:\Program Files\ATI Technologies\ATI.ACE\Core-Static;D:\Program Files\java\jdk1.6.0_24\bin;C:\Program Files\QuickTime\QTSystem\;C:\Program Files\Toshiba\Bluetooth Toshiba Stack\sys\;D:\eclipse;
+USERNAME=Owner
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 16 Model 6 Stepping 2, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 3
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 16 model 6 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, popcnt, mmxext, 3dnowpref, lzcnt, sse4a
+
+Memory: 4k page, physical 3407016k(677208k free), swap 6647312k(3926380k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.8-b03) for windows-x86 JRE (1.6.0_33-b03), built on May  9 2012 09:39:57 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Mon Nov 26 21:39:25 2012
+elapsed time: 0 seconds
+

@@ -2,24 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/post_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="遊ぶ" />
+        android:text="遊ぶ"
+        android:onClick="pushBtn" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/post_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="投稿" />
+        android:text="投稿"
+        android:onClick="pushBtn" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/post_myquiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="マイクイズ" />
+        android:text="マイクイズ"
+        android:onClick="pushBtn" />
 
 </LinearLayout>

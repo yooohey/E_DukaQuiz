@@ -1,5 +1,6 @@
 package sample.edukaquiz;
 
+import sample.postquiz.PostQuizMenuActivity;
 import sample.stampLally.StampLallyActivity;
 import android.app.Activity;
 import android.content.Intent;
@@ -20,8 +21,13 @@ public class SelectMenuActivity extends Activity{
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 		// TODO 自動生成されたメソッド・スタブ
 		
-		Intent i = new Intent(this,PreferencesActivity.class);
-		startActivity(i);
+		if(item.getItemId() == R.id.menu_settings ){
+			Intent i = new Intent(this,PreferencesActivity.class);
+			startActivity(i);		
+		}else{
+			Intent i = new Intent(this,DebugListActivity.class);
+			startActivity(i);		
+		}
 		return super.onMenuItemSelected(featureId, item);
 		
 	}
@@ -40,12 +46,24 @@ public class SelectMenuActivity extends Activity{
                 
         setContentView(R.layout.menu);
         
+        
+        
     }
 	
 	public void qesS(View view){
 		if(view.getId() == R.id.menuQuiz){
+			
 			Intent i = new Intent(this,OfflineQuizActivity.class);
 			this.startActivityForResult(i,0);
+			
+//			Intent i = new Intent(this,ResultActivity.class);
+//			this.startActivityForResult(i,0);
+			
+		}else if(view.getId() == R.id.menuThoko){
+			
+			Intent i = new Intent(this,PostQuizMenuActivity.class);
+			this.startActivityForResult(i,0);
+			
 		}else{
 			Intent i = new Intent(this,StampLallyActivity.class);
 			this.startActivity(i);

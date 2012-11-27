@@ -15,8 +15,12 @@ import com.google.android.maps.MyLocationOverlay;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -64,6 +68,7 @@ private static final float RADISU = 50;
 	//カーソルで移動する距離
 	private final int MOVE = 200;
 	public static GeoPoint testGP;
+	private Vibrator vibrator;
 	
 	
 	
@@ -88,7 +93,7 @@ private static final float RADISU = 50;
         
         testGP = new GeoPoint((int)(33.643536*1e6),(int)(130.691459*1e6));
         ctrl.setCenter(this.destinationGP.get(0));
-        ctrl.setZoom(18);
+        ctrl.setZoom(19);
         /*
         this.iconDraws.put(true, new Icon(this,this.map));
 		this.iconDraws.put(false, new BallonIcon(this, this.map));
@@ -134,6 +139,20 @@ private static final float RADISU = 50;
 		
 		this.drawStamp();
 		
+		//viewのサイズが大きいと溢れる模様  VireFlipperをweight=10 CheckBoxをweight=1にすることで対応
+		
+		prefs = getSharedPreferences("E_DUKA", MODE_PRIVATE);
+		if(prefs.getBoolean("stampHelp", true))
+			new AlertDialog.Builder(this).setView(new HelpView(this, null))
+			.setPositiveButton("OK", new OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO 自動生成されたメソッド・スタブ
+					
+				}
+			}).show();
+		
 		/*	onCreではViewが描画されていないので取得できない（0になる）
 		ImageView iv = (ImageView)this.findViewById(R.id.stampView1);
 		int x=iv.getLeft();int y=iv.getTop();
@@ -150,6 +169,8 @@ private static final float RADISU = 50;
 			this.rectList.add(new Rect(x+iv.getWidth()*i,y,x+iv.getWidth()*(i+1),y+iv.getHeight()));
 		}
 		*/
+		
+		this.vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
     }
     
@@ -160,12 +181,7 @@ private static final float RADISU = 50;
     @Override
 	public void onWindowFocusChanged(boolean hasFocus) {
 		// TODO 自動生成されたメソッド・スタブ
-		super.onWindowFocusChanged(hasFocus);
-		
-		
-		
-		
-	
+		super.onWindowFocusChanged(hasFocus);	
 	}
     
     public class ImageViewOnClick implements OnTouchListener{
@@ -393,11 +409,19 @@ private static final float RADISU = 50;
 					Log.d("MyOver","円の中にいます");
 					Toast.makeText(this, "スタンプを取得しました", Toast.LENGTH_SHORT).show();
 					this.setStamp(i);
+					
+					if(readVibPref())
+						vibrator.vibrate(1000);
 					return true;
 				}				
 			}
 		}
 		return false;
+	}
+	
+	private boolean readVibPref(){
+		SharedPreferences pref = getSharedPreferences("E_DUKA", MODE_PRIVATE);
+		return pref.getBoolean("vibrate", true);
 	}
 	
 	public Boolean inMap(){

@@ -30,7 +30,7 @@ public class OfflineQuizActivity extends Activity{
 
 	
     public Integer q_Index=0;    //現在が難問目かの保持
-    public final Integer totalQuestions = 3; //出題数
+    public final static Integer totalQuestions = 3; //出題数
     public  Integer[] order;//DBのIndex準拠にした問題の出題順
 
     
@@ -44,6 +44,10 @@ public class OfflineQuizActivity extends Activity{
     private Handler nextHandler = new Handler();
     private Handler nextDelete = new Handler();
     private final int PBTime = 10000;//ProgressBarの設定タイム    
+    
+    public static Integer getToatlQ(){
+    	return totalQuestions;
+    }
     
 	private static Map<Integer, Quiz> quizType = new HashMap<Integer, Quiz>();
     static{
@@ -84,8 +88,7 @@ public class OfflineQuizActivity extends Activity{
 		//配列をシャッフルする
 		BoxShuffle.shuffle(this.order);		        
         
-        //モザイク問題を先頭へ
-        this.order[0] = 6;this.order[1] = 16;
+        //モザイク問題を先頭へthis.order[0] = 6;this.order[1] = 16;
     
 
         //経過時間の設定　現在MAX10秒
@@ -201,7 +204,7 @@ public class OfflineQuizActivity extends Activity{
 	//order[現在の問題数]に基づいて問題を取得　答えのみanswerに格納
 	 public void question(){
 
-		 if(this.q_Index < this.totalQuestions){
+		 if(this.q_Index < totalQuestions){
 			 
 			 DBHelper dbh = new DBHelper(this);
 			 SQLiteDatabase db = dbh.getReadableDatabase();

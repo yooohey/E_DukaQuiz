@@ -11,6 +11,7 @@
    <PreferenceCategory android:title="@string/category_stamp">
        <CheckBoxPreference android:title="@string/label_vibrator" android:key="@string/key_vibrator" android:defaultValue="true" />
        <PreferenceScreen android:key="stampClear" android:title="@string/label_stampClear"></PreferenceScreen>
+       <CheckBoxPreference android:key="@string/kye_stampHelp" android:title="@string/label_stampHelp" android:defaultValue="true"/>
    </PreferenceCategory>
     
     

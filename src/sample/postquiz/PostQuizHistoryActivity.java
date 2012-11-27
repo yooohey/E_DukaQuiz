@@ -1,9 +1,9 @@
-package sample.edukaquiz;
+package sample.postquiz;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-public class PostQuizHistory extends Activity{
+public class PostQuizHistoryActivity extends Activity{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

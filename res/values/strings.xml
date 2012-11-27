@@ -15,9 +15,23 @@
     
     <string name="category_quiz">クイズの設定</string>
     <string name="category_stamp">スタンプラリーの設定</string>
-    <string name="key_vibrator">vibrator</string>
+    <string name="key_vibrator">vibrate</string>
     <string name="label_vibrator">スタンプ獲得時の振動</string>
     <string name="label_twitter">Twitterの登録解除</string>
     <string name="label_stampClear">スタンプのクリア</string>
+    <string name="label_retry">リトライ</string>
+    <string name="label_stampHelp">起動時にヘルプを起動</string>
+    <string name="kye_stampHelp">stampHelp</string>
+    <string name="label_stampHelpCheckBox">次回から表示しない</string>
+    
+    <string name="label_postDialogTitle">投稿する際の名前を入力してください</string>
+    <string name="label_postDialogMessage">6文字まで入力できます</string>
+    
+    <string name="label_postingReturn">戻る</string>
+    <string name="label_postingPost">投稿！</string>
+    
+    <string name="label_postingQ">問題文を入れてください</string>
+    <string name="label_postingAnswer">解答を入れてください</string>
+    <string name="label_postingDammy">誤答を入れてください</string>
     
     </resources>

@@ -11,24 +11,36 @@
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+<<<<<<< HEAD
         android:theme="@style/original" >
+=======
+        android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+>>>>>>> test/post
         <activity
             android:name=".SelectMenuActivity"
-            android:label="@string/title_activity_main" >
+            android:label="@string/title_activity_main" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OfflineQuizActivity"></activity>
-        <activity android:name="sample.stampLally.StampLallyActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".OfflineQuizActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="sample.stampLally.StampLallyActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <activity android:name=".ResultActivity" android:screenOrientation="portrait"></activity>updated_at
         <activity android:name=".OAuthActivity"></activity>
-        <activity android:name=".PreferencesActivity"></activity>
+        <activity android:name=".PreferencesActivity" android:screenOrientation="portrait"></activity>
+        
         
         <!-- MAPを使用するために追記 -->
         <uses-library android:name="com.google.android.maps"/>
+        <activity android:name="sample.postquiz.PostQuizHistoryActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="sample.postquiz.PostQuizMenuActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="sample.postquiz.PostQuizPlayActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="sample.postquiz.PostQuizPostingActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="DebugListActivity"></activity>
+        <activity android:name="sample.stampLally.Testmekuri"></activity>
+        
     </application>
     
 <uses-permission android:name="android.permission.INTERNET"/>
