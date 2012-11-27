@@ -16,7 +16,6 @@ import android.widget.ImageView;
 public class QuizMosaic extends Quiz {
 	
     private Bitmap image,mosaic;
-    //private int dot=14,i;
     private Timer timer;
 	
     public QuizMosaic() {
@@ -33,15 +32,15 @@ public class QuizMosaic extends Quiz {
 		
 		
 	}
-	    
+	
     public void mosaicCreate(){
     	if(this.image != null){
     	if(this.timer!=null)
     		this.timer.cancel();
-    	
+
     	final int dot = 14 ;
     	final android.os.Handler handler = new android.os.Handler();
-    	
+
     	this.timer = new Timer();
     	this.timer.schedule(new TimerTask() {
 
@@ -49,27 +48,28 @@ public class QuizMosaic extends Quiz {
     		public void run() {
     			// TODO 自動生成されたメソッド・スタブ
 
-    			
+
     			Bitmap bmp = Bitmap.createScaledBitmap(image, 200, 250, false);
     			Bitmap mosaic_original = CreateMosaic.mosaic_image(bmp,dot - (int)(System.currentTimeMillis() - startTime)/800);
     			mosaic = Bitmap.createScaledBitmap(mosaic_original, 400, 300,false);
     			handler.post(new Runnable() {
-					
-					@Override
-					public void run() {
-						if(mosaic != null){
-							// TODO 自動生成されたメソッド・スタブ
-							ImageView iv = (ImageView)activity.findViewById(R.id.mosaic);
-							iv.setImageBitmap(mosaic);
-							Log.d("QuizMosaic","mosaicCreate_Run");
-						}
-					}
-				});
+
+    				@Override
+    				public void run() {
+    					if(mosaic != null){
+    						// TODO 自動生成されたメソッド・スタブ
+    						ImageView iv = (ImageView)activity.findViewById(R.id.mosaic);
+    						iv.setImageBitmap(mosaic);
+    						Log.d("QuizMosaic","mosaicCreate_Run");
+    					}
+    				}
+    			});
     		}		
-    	},0, 500);
+    		},0, 500);
+    	
     	}
     }
- 
+
 	@Override
 	void close() {
 		// TODO 自動生成されたメソッド・スタブ

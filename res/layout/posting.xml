@@ -9,17 +9,17 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical" >
-
+
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/post_Q_editText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:hint="@string/label_postingQ"
-            android:ems="10" />
+            android:ems="10"
+            android:hint="@string/label_postingQ" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/post_A_editText"
             style="@style/postEditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
 
         <EditText
             style="@style/postEditTextStyle"
-            android:id="@+id/editText3"
+            android:id="@+id/post_D1_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/label_postingDammy"
@@ -38,7 +38,7 @@
 
         <EditText
             style="@style/postEditTextStyle"
-            android:id="@+id/editText4"
+            android:id="@+id/post_D2_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/label_postingDammy"
@@ -46,7 +46,7 @@
 
         <EditText
             style="@style/postEditTextStyle"
-            android:id="@+id/editText5"
+            android:id="@+id/post_D3_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/label_postingDammy"

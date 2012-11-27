@@ -22,6 +22,7 @@ public class PreferencesActivity extends PreferenceActivity {
 		// TODO 自動生成されたメソッド・スタブ
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.prefs_screen);
+		this.getPreferenceManager().setSharedPreferencesName("E_DUKA");
 		this.addPreferencesFromResource(R.xml.prefs);
 		
 		PreferenceScreen twitter = (PreferenceScreen)this.findPreference("twitter");

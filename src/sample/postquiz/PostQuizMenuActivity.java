@@ -1,6 +1,11 @@
-package sample.edukaquiz;
+package sample.postquiz;
 
 import java.util.UUID;
+
+import sample.edukaquiz.R;
+import sample.edukaquiz.R.id;
+import sample.edukaquiz.R.layout;
+import sample.edukaquiz.R.string;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -16,10 +21,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class PostQuizMenu extends Activity {
+public class PostQuizMenuActivity extends Activity {
 
-	private UUID uuid;
-	private String userName;
+	private static UUID uuid;
+	private static String userName;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,21 +34,28 @@ public class PostQuizMenu extends Activity {
 		
 		this.setup();
 		Toast.makeText(this, uuid.toString(), Toast.LENGTH_SHORT).show();
-		Toast.makeText(this, this.userName, Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, userName, Toast.LENGTH_SHORT).show();
+	}
+	public static String getUserName(){
+		return userName;
+	}
+	
+	public static UUID getUUID(){
+		return uuid;
 	}
 	
 	public void pushBtn(View view){
 				
 		if(view.getId() == R.id.post_play){
-			Intent i = new Intent(this,PostQuizPlay.class);
+			Intent i = new Intent(this,PostQuizPlayActivity.class);
 			this.startActivity(i);
 		}
 		if(view.getId() == R.id.post_post){
-			Intent i = new Intent(this,PostQuizPosting.class);
+			Intent i = new Intent(this,PostQuizPostingActivity.class);
 			this.startActivity(i);
 		}
 		if(view.getId() == R.id.post_myquiz){
-			Intent i = new Intent(this,PostQuizHistory.class);
+			Intent i = new Intent(this,PostQuizHistoryActivity.class);
 			this.startActivity(i);
 		}
 		
@@ -52,12 +64,12 @@ public class PostQuizMenu extends Activity {
 	private void setup(){
 		
 		this.readPrefs();
-		if(this.uuid==null){
-			this.uuid = UUID.randomUUID();
+		if(uuid==null){
+			uuid = UUID.randomUUID();
 			this.writeUuidPrefs();
 		}
 		
-		if(this.userName == null){
+		if(userName == null){
 			
 			this.setUserNameDialog();
 			
@@ -81,7 +93,7 @@ public class PostQuizMenu extends Activity {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO 自動生成されたメソッド・スタブ
-				Toast.makeText(PostQuizMenu.this, edit.getText().toString(), Toast.LENGTH_SHORT).show();
+				Toast.makeText(PostQuizMenuActivity.this, edit.getText().toString(), Toast.LENGTH_SHORT).show();
 				
 				if(edit.getText().toString().equals("")){
 					setUserNameDialog();
@@ -106,7 +118,7 @@ public class PostQuizMenu extends Activity {
 		
 		SharedPreferences prefs = getSharedPreferences("post", MODE_PRIVATE);
 		SharedPreferences.Editor editor = prefs.edit();
-		editor.putString("name", this.userName);
+		editor.putString("name", userName);
 		editor.commit();
 	}
 	
