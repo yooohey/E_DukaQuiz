@@ -33,5 +33,6 @@
     <string name="label_postingQ">問題文を入れてください</string>
     <string name="label_postingAnswer">解答を入れてください</string>
     <string name="label_postingDammy">誤答を入れてください</string>
+    <string name="time_limit">制限時間</string>
     
     </resources>

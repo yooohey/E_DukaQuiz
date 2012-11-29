@@ -1,32 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/mainLayout" >
-
+    android:orientation="vertical" >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        android:background="@drawable/backgraund"
-        android:orientation="vertical" >
-
-        <ProgressBar
-            android:id="@+id/progressBar1"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="fill_parent"
+        android:layout_margin="0dp"
+        android:background="@drawable/haikei_mono"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="5dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/time_limit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="top|left"
+                android:text="@string/time_limit"
+                android:textSize="16sp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5" />
+        </LinearLayout>
 
         <FrameLayout
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:layout_weight="2" >
+            android:layout_weight="20"
+            android:background="@drawable/backgraund" >
 
             <ImageView
                 android:id="@+id/image_point"
@@ -34,16 +53,41 @@
                 android:layout_height="match_parent"
                 android:scaleType="matrix" />
 
-            <TextView
+            <!--
+                 TextView
                 android:id="@+id/quetion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="top|left"
                 android:text="Quetion"
-                android:textSize="24sp" />
+                android:textSize="24sp" /
+            -->
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:gravity="bottom|right" />
+
+            <ImageView
+                android:id="@+id/mosaic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="bottom"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:gravity="bottom|right" />
         </FrameLayout>
 
-        <LinearLayout
+        <!--
+        LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -65,9 +109,12 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="20dp"
                 android:gravity="bottom|right" />
-        </LinearLayout>
+        </LinearLayout
+        -->
 
-        <LinearLayout
+
+        <!--
+        LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -124,16 +171,73 @@
                         android:text="Answer4" />
                 </TableRow>
             </TableLayout>
-        </LinearLayout>
+
+        </LinearLayout
+        -->
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="#ffff" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="answer"
+                    android:text="@string/a_count" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="answer"
+                    android:text="Answer2" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="answer"
+                    android:text="Answer3" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="answer"
+                    android:text="Answer4" />
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
-
-    <!-- TextView
+
+    <!--
+         TextView
         android:id="@+id/quetions"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="20dp"
         android:layout_weight="10"
         android:gravity="bottom"
-        android:text="Quetion" /-->
+        android:text="Quetion" /
+    -->
 
 </LinearLayout>
